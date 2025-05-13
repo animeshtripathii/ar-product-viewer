@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AR Watch Viewer</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r126/three.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="assets/logo.png" alt="Logo" class="logo">
+        </div>
+        <h1>AR Watch Viewer</h1>
+    </header>
+
+    <main>
+        <model-viewer 
+            src="models/watch.glb"
+            ios-src="usdz/watch.usdz"
+            alt="3D Watch Model"
+            ar
+            ar-modes="webxr scene-viewer quick-look"
+            camera-controls
+            auto-rotate
+            rotation-per-second="30deg"
+            camera-orbit="0deg 75deg 105%"
+            min-camera-orbit="auto auto 50%"
+            max-camera-orbit="auto auto 150%"
+            interaction-prompt="auto"
+            shadow-intensity="1"
+            exposure="1"
+            environment-image="neutral"
+            loading="eager">
+            <button slot="ar-button" class="ar-button">
+                View in AR
+            </button>
+        </model-viewer>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
